@@ -92,8 +92,8 @@ public class PaySlip {
         }
 
         // Calculate regular pay and overtime pay
-        regularPay = regularHours * employee.getHourlyRate();
-        overtimePay = overtimeHours * employee.getHourlyRate() * 1.25; // 25% overtime premium
+        regularPay = employee.calculateRegularPay(regularHours);
+        overtimePay = employee.calculateOvertimePay(overtimeHours); // 25% overtime premium
 
         Map<String, Double> result = new HashMap<>();
         result.put("regularHours", regularHours);

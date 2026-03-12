@@ -5,13 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea67d5ce-2183-4741-8308-276a76d084db" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/view/dialog/EmployeeDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/view/dialog/EmployeeDialog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/model/ContractualEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/model/RegularEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/data/employeeDetails.csv" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/data/employeeDetails.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/model/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/model/PaySlip.java" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/model/PaySlip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/service/PayrollProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/service/PayrollProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/service/PayrollService.java" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/service/PayrollService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/model/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/model/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/service/PayrollProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/service/PayrollProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/view/Dashboard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/view/Dashboard$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/view/dialog/AttendanceViewerDialog$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/view/dialog/AttendanceViewerDialog$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payroll_system.log" beforeDir="false" afterPath="$PROJECT_DIR$/payroll_system.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,14 +42,20 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/joembolinas/CP2_GROUP-4.git&quot;,
-    &quot;accountId&quot;: &quot;33f72374-9b5f-42b2-a2aa-33827b828dee&quot;
+    &quot;url&quot;: &quot;https://github.com/abdullahalhadad/CP2_GROUP-4.git&quot;,
+    &quot;accountId&quot;: &quot;5daf7a32-db3c-426d-8151-edd0a4266e78&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/Main.java" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -47,22 +71,28 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.motorph.model" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
+        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
       </set>
     </attachedChunks>
   </component>
@@ -84,6 +114,12 @@
       <workItem from="1751467516932" duration="759000" />
       <workItem from="1751469752683" duration="131000" />
       <workItem from="1752673139179" duration="298000" />
+      <workItem from="1767762342333" duration="731000" />
+      <workItem from="1767763108188" duration="656000" />
+      <workItem from="1768368553372" duration="696000" />
+      <workItem from="1769572240005" duration="2112000" />
+      <workItem from="1769924813405" duration="949000" />
+      <workItem from="1770696392401" duration="62000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />

@@ -229,4 +229,19 @@ public class Employee {
     public double getHourlyRate() {
         return hourlyRate;
     }
+
+    // OOP Payroll computation
+    public double calculateGrossPay(double hoursWorked) {
+        return hoursWorked * hourlyRate;
+
+    }
+    public double calculateRegularPay(double hours) {
+        return hours * hourlyRate;
+    }
+
+    public double calculateOvertimePay(double hours) {
+        return hours * hourlyRate * 1.25;
+    }
 }
+
+

@@ -3,7 +3,9 @@ package com.motorph.service;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.motorph.model.Employee;
 import com.motorph.util.AppConstants;
+
 
 /**
  * Handles all payroll calculations including gross pay, net pay, and various
@@ -57,8 +59,8 @@ public class PayrollProcessor {
         return table;
     }
 
-    public double calculateGrossPay(double hoursWorked, double hourlyRate) {
-        return hoursWorked * hourlyRate;
+    public double calculateGrossPay(Employee employee, double hoursWorked) {
+        return employee.calculateGrossPay(hoursWorked);
     }
 
     public double calculateNetPay(double grossPay) {

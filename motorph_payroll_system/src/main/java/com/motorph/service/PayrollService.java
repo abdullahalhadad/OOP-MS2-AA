@@ -52,7 +52,7 @@ public class PayrollService {
         
         // Create and generate the payslip
         PaySlip paySlip = new PaySlip(employee, startDate, endDate);
-        paySlip.generate(attendanceRecords, payrollCalculator);
+        paySlip.generate(records, payrollCalculator);
         
         return paySlip;
     }
