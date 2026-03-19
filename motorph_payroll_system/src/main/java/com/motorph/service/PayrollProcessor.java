@@ -59,8 +59,8 @@ public class PayrollProcessor {
         return table;
     }
 
-    public double calculateGrossPay(Employee employee, double hoursWorked) {
-        return employee.calculateGrossPay(hoursWorked);
+    public double calculateGrossPay(Employee employee) {
+        return employee.calculateGrossPay();
     }
 
     public double calculateNetPay(double grossPay) {

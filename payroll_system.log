@@ -826,3 +826,15 @@ Jul 16, 2025 9:49:18 PM com.motorph.repository.DataRepository loadAttendanceReco
 INFO: Loading attendance from: c:\Users\ADMIN\CP2_GROUP-4\motorph_payroll_system\data\attendanceRecord.csv
 Jul 16, 2025 9:49:18 PM com.motorph.repository.DataRepository loadAttendanceRecords
 INFO: Successfully loaded 5,168 of 5,168 attendance records
+Mar 19, 2026 3:48:40 PM com.motorph.repository.DataRepository <init>
+INFO: DataRepository initialized
+Mar 19, 2026 3:48:40 PM com.motorph.repository.DataRepository loadEmployees
+INFO: Loading employees from: D:\IntelliJ 2026\OOP-MS2-AA\motorph_payroll_system\data\employeeDetails.csv
+Mar 19, 2026 3:48:40 PM com.motorph.repository.DataRepository loadEmployees
+INFO: Successfully loaded 34 of 34 employee records
+Mar 19, 2026 3:48:40 PM com.motorph.repository.DataRepository loadEmployees
+INFO: Employee 10001 details: ID=10,001, Name=Manuel III Garcia, Birthday=null, Address=null, SSS=null
+Mar 19, 2026 3:48:40 PM com.motorph.repository.DataRepository loadAttendanceRecords
+INFO: Loading attendance from: D:\IntelliJ 2026\OOP-MS2-AA\motorph_payroll_system\data\attendanceRecord.csv
+Mar 19, 2026 3:48:40 PM com.motorph.repository.DataRepository loadAttendanceRecords
+INFO: Successfully loaded 5,168 of 5,168 attendance records

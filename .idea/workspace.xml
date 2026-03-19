@@ -5,18 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea67d5ce-2183-4741-8308-276a76d084db" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/model/ContractualEmployee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/model/RegularEmployee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/data/employeeDetails.csv" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/data/employeeDetails.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/model/ContractualEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/model/ContractualEmployee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/model/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/model/PaySlip.java" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/model/PaySlip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/model/RegularEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/model/RegularEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/repository/DataRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/repository/DataRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/service/PayrollProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/service/PayrollProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/service/PayrollService.java" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/service/PayrollService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/view/dialog/EmployeeDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/view/dialog/EmployeeDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/model/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/model/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/model/PaySlip.class" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/model/PaySlip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/repository/DataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/repository/DataRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/service/PayrollProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/service/PayrollProcessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/view/Dashboard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/view/Dashboard$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/view/dialog/AttendanceViewerDialog$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/view/dialog/AttendanceViewerDialog$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/service/PayrollService.class" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/service/PayrollService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/view/dialog/EmployeeDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/motorph_payroll_system/target/classes/com/motorph/view/dialog/EmployeeDialog.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payroll_system.log" beforeDir="false" afterPath="$PROJECT_DIR$/payroll_system.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,12 +43,12 @@
     &quot;assignee&quot;: &quot;joembolinas&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/abdullahalhadad/CP2_GROUP-4.git&quot;,
-    &quot;accountId&quot;: &quot;5daf7a32-db3c-426d-8151-edd0a4266e78&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/abdullahalhadad/OOP-MS2-AA.git",
+    "accountId": "5daf7a32-db3c-426d-8151-edd0a4266e78"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/motorph_payroll_system/src/main/java/com/motorph/Main.java" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -64,26 +67,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.import",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.motorph.model" />

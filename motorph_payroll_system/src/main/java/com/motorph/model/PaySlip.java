@@ -1,30 +1,26 @@
 package com.motorph.model;
 
+import com.motorph.service.PayrollProcessor;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.motorph.service.PayrollProcessor;
+import java.util.*;
 
 /**
  * Represents a payslip for an employee for a specific period.
- * Calculates and displays payslip information including allowances and
- * deductions.
  */
 public class PaySlip {
+
     private Employee employee;
     private LocalDate startDate;
     private LocalDate endDate;
+
     private double regularHours;
     private double overtimeHours;
     private double grossPay;
     private double netPay;
+
     private Map<String, Double> deductions;
     private Map<String, Double> allowances;
-    private static final String CURRENCY_FORMAT = "₱%,15.2f";
 
     public PaySlip(Employee employee, LocalDate startDate, LocalDate endDate) {
         this.employee = employee;
@@ -34,66 +30,75 @@ public class PaySlip {
         this.allowances = new HashMap<>();
     }
 
+    // ==============================
+    // MAIN GENERATE METHOD
+    // ==============================
     public void generate(List<AttendanceRecord> attendanceRecords, PayrollProcessor calculator) {
-        // Calculate working hours
-        Map<String, Double> payDetails = getGrossPayDetails(attendanceRecords, calculator);
+
+        Map<String, Double> payDetails = getGrossPayDetails(attendanceRecords);
+
         this.regularHours = payDetails.get("regularHours");
         this.overtimeHours = payDetails.get("overtimeHours");
         this.grossPay = payDetails.get("totalPay");
-        // Calculate allowances
+
+        // Allowances
         Map<String, Double> allowanceDetails = getProRatedAllowanceDetails();
-        this.allowances.put("rice", allowanceDetails.get("riceSubsidy"));
-        this.allowances.put("phone", allowanceDetails.get("phoneAllowance"));
-        this.allowances.put("clothing", allowanceDetails.get("clothingAllowance"));
-        this.allowances.put("workingDays",
-                allowanceDetails.get("workingDays") != null ? allowanceDetails.get("workingDays") : 21.0);
+
+        allowances.put("rice", allowanceDetails.get("riceSubsidy"));
+        allowances.put("phone", allowanceDetails.get("phoneAllowance"));
+        allowances.put("clothing", allowanceDetails.get("clothingAllowance"));
+
         double totalAllowances = allowanceDetails.get("totalAllowances");
-        // Calculate deductions
-        this.deductions.put("sss", calculator.calculateSSSContribution(grossPay));
-        this.deductions.put("philhealth", calculator.calculatePhilHealthContribution(grossPay));
-        this.deductions.put("pagibig", calculator.calculatePagIbigContribution(grossPay));
-        double taxableIncome = grossPay
-                - (deductions.get("sss") + deductions.get("philhealth") + deductions.get("pagibig"));
-        this.deductions.put("withholdingTax", calculator.calculateWithholdingTax(taxableIncome));
-        double totalDeductions = deductions.get("sss") + deductions.get("philhealth") +
-                deductions.get("pagibig") + deductions.get("withholdingTax");
-        // Calculate net pay
+
+        // Deductions
+        double sss = calculator.calculateSSSContribution(grossPay);
+        double philhealth = calculator.calculatePhilHealthContribution(grossPay);
+        double pagibig = calculator.calculatePagIbigContribution(grossPay);
+
+        deductions.put("sss", sss);
+        deductions.put("philhealth", philhealth);
+        deductions.put("pagibig", pagibig);
+
+        double taxableIncome = grossPay - (sss + philhealth + pagibig);
+
+        double tax = calculator.calculateWithholdingTax(taxableIncome);
+        deductions.put("withholdingTax", tax);
+
+        double totalDeductions = getTotalDeductions();
+
+        // Net Pay
         this.netPay = grossPay - totalDeductions + totalAllowances;
     }
 
-    private Map<String, Double> getGrossPayDetails(List<AttendanceRecord> attendanceRecords,
-            PayrollProcessor calculator) {
+    // ==============================
+    // GROSS PAY COMPUTATION
+    // ==============================
+    private Map<String, Double> getGrossPayDetails(List<AttendanceRecord> attendanceRecords) {
+
         double regularHours = 0;
         double overtimeHours = 0;
-        double regularPay = 0;
-        double overtimePay = 0;
 
-        // Filter attendance records for the employee within the date range
-        List<AttendanceRecord> employeeRecords = new ArrayList<>();
         for (AttendanceRecord record : attendanceRecords) {
-            if (record.getEmployeeId() == employee.getEmployeeId() &&
-                    !record.getDate().isBefore(startDate) &&
-                    !record.getDate().isAfter(endDate)) {
-                employeeRecords.add(record);
+            if (record.getEmployeeId() == employee.getEmployeeId()) {
+
+                LocalDate date = record.getDate();
+
+                if (!date.isBefore(startDate) && !date.isAfter(endDate)) {
+
+                    double hours = record.getTotalHours();
+
+                    if (hours <= 8) {
+                        regularHours += hours;
+                    } else {
+                        regularHours += 8;
+                        overtimeHours += (hours - 8);
+                    }
+                }
             }
         }
 
-        // Calculate total hours worked
-        for (AttendanceRecord record : employeeRecords) {
-            double hoursWorked = record.getTotalHours();
-
-            // Assuming over 8 hours is overtime
-            if (hoursWorked <= 8) {
-                regularHours += hoursWorked;
-            } else {
-                regularHours += 8;
-                overtimeHours += (hoursWorked - 8);
-            }
-        }
-
-        // Calculate regular pay and overtime pay
-        regularPay = employee.calculateRegularPay(regularHours);
-        overtimePay = employee.calculateOvertimePay(overtimeHours); // 25% overtime premium
+        double regularPay = employee.calculateRegularPay(regularHours);
+        double overtimePay = employee.calculateOvertimePay(overtimeHours);
 
         Map<String, Double> result = new HashMap<>();
         result.put("regularHours", regularHours);
@@ -105,36 +110,44 @@ public class PaySlip {
         return result;
     }
 
+    // ==============================
+    // ALLOWANCES (PRORATED)
+    // ==============================
     private Map<String, Double> getProRatedAllowanceDetails() {
-        // Calculate number of working days in the date range
+
         long totalDays = ChronoUnit.DAYS.between(startDate, endDate) + 1;
-        double workingDays = totalDays * 5 / 7; // assuming 5-day work week
+        double workingDays = totalDays * 5 / 7.0;
 
-        // Pro-rate the allowances based on the number of working days
-        double riceSubsidyPerDay = employee.getRiceSubsidy() / 21; // 21 working days per month
-        double phoneAllowancePerDay = employee.getPhoneAllowance() / 21;
-        double clothingAllowancePerDay = employee.getClothingAllowance() / 21;
+        double ricePerDay = employee.getRiceSubsidy() / 21;
+        double phonePerDay = employee.getPhoneAllowance() / 21;
+        double clothingPerDay = employee.getClothingAllowance() / 21;
 
-        double proRatedRiceSubsidy = riceSubsidyPerDay * workingDays;
-        double proRatedPhoneAllowance = phoneAllowancePerDay * workingDays;
-        double proRatedClothingAllowance = clothingAllowancePerDay * workingDays;
+        double rice = ricePerDay * workingDays;
+        double phone = phonePerDay * workingDays;
+        double clothing = clothingPerDay * workingDays;
 
         Map<String, Double> result = new HashMap<>();
-        result.put("riceSubsidy", proRatedRiceSubsidy);
-        result.put("phoneAllowance", proRatedPhoneAllowance);
-        result.put("clothingAllowance", proRatedClothingAllowance);
-        result.put("totalAllowances", proRatedRiceSubsidy + proRatedPhoneAllowance + proRatedClothingAllowance);
-        result.put("workingDays", workingDays);
+        result.put("riceSubsidy", rice);
+        result.put("phoneAllowance", phone);
+        result.put("clothingAllowance", clothing);
+        result.put("totalAllowances", rice + phone + clothing);
 
         return result;
     }
 
-    // Calculate total deductions
+    // ==============================
+    // TOTAL DEDUCTIONS
+    // ==============================
     public double getTotalDeductions() {
-        return deductions.values().stream().mapToDouble(Double::doubleValue).sum();
+        return deductions.values()
+                .stream()
+                .mapToDouble(Double::doubleValue)
+                .sum();
     }
 
-    // Getters
+    // ==============================
+    // GETTERS
+    // ==============================
     public Employee getEmployee() {
         return employee;
     }

@@ -15,6 +15,7 @@ import javax.swing.border.TitledBorder;
 
 import com.motorph.controller.EmployeeController;
 import com.motorph.model.Employee;
+import com.motorph.model.RegularEmployee;
 import com.motorph.util.AppConstants;
 import com.motorph.util.AppUtils;
 
@@ -269,11 +270,12 @@ public class EmployeeDialog extends JDialog {
             double phoneAllowance = AppUtils.validateSalary(phoneAllowanceField.getText(), "Phone Allowance");
             double clothingAllowance = AppUtils.validateSalary(clothingAllowanceField.getText(), "Clothing Allowance");
 
-            // Create or update employee
-            Employee employee = new Employee(
+            // Create employee
+            Employee employee = new RegularEmployee(
                     employeeId, lastName, firstName, birthday, address, phone,
                     sss, philhealth, tin, pagibig, status, position, supervisor,
-                    basicSalary, riceSubsidy, phoneAllowance, clothingAllowance, 0.0);
+                    basicSalary, riceSubsidy, phoneAllowance, clothingAllowance, 0.0
+            );
 
             // Save to database
             boolean success;

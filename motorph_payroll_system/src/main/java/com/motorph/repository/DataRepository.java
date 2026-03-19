@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 import java.util.stream.Collectors;
 
+import com.motorph.model.RegularEmployee;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -259,7 +260,7 @@ public class DataRepository {
             double grossSemiMonthlyRate = parseAmount(record.get(17));
 
             // Use the full constructor to include all employee details
-            return new Employee(
+            return new RegularEmployee(
                     id, lastName, firstName, birthday, address, phoneNumber,
                     sssNumber, philhealthNumber, tinNumber, pagibigNumber,
                     status, position, supervisor, basicSalary, riceSubsidy,
@@ -273,23 +274,23 @@ public class DataRepository {
         // Create sample employees with full details if this set of employee you see on
         // the jtable for employee your app is on the problem hahaha
         LocalDate sampleDate = LocalDate.of(1990, 1, 1);
-        employees.add(new Employee(
+        employees.add(new RegularEmployee(
                 10001, "Garcia", "Manuel", sampleDate, "Sample Address", "123-456-789",
                 "SSS-123456", "PH-123456", "TIN-123456", "PAGIBIG-123456",
                 "Regular", "Chief Executive Officer", "N/A", 90000, 1500, 2000, 1000, 45000));
-        employees.add(new Employee(
+        employees.add(new RegularEmployee(
                 10002, "Santos", "Antonio", sampleDate, "Sample Address", "123-456-789",
                 "SSS-123456", "PH-123456", "TIN-123456", "PAGIBIG-123456",
                 "Regular", "Chief Operating Officer", "Garcia, Manuel", 60000, 1500, 2000, 1000, 30000));
-        employees.add(new Employee(
+        employees.add(new RegularEmployee(
                 10003, "Reyes", "Bianca", sampleDate, "Sample Address", "123-456-789",
                 "SSS-123456", "PH-123456", "TIN-123456", "PAGIBIG-123456",
                 "Regular", "Chief Finance Officer", "Garcia, Manuel", 60000, 1500, 2000, 1000, 30000));
-        employees.add(new Employee(
+        employees.add(new RegularEmployee(
                 10004, "Lim", "Isabella", sampleDate, "Sample Address", "123-456-789",
                 "SSS-123456", "PH-123456", "TIN-123456", "PAGIBIG-123456",
                 "Regular", "Chief Marketing Officer", "Garcia, Manuel", 60000, 1500, 2000, 1000, 30000));
-        employees.add(new Employee(
+        employees.add(new RegularEmployee(
                 10005, "Lee", "Harper", sampleDate, "Sample Address", "123-456-789",
                 "SSS-123456", "PH-123456", "TIN-123456", "PAGIBIG-123456",
                 "Regular", "IT Operations", "Lim, Antonio", 52670, 1500, 1000, 1000, 26335));
